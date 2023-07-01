@@ -22,17 +22,50 @@ $appointmentDate = $_POST['appointment-date'];
 $vehicleCategory = $_POST['vehicle-category'];
 $vehicleId = $_POST['vehicle-id'];
 
-// Prepare and execute the insert statement
-$stmt = $conn->prepare("INSERT INTO clients (nom, email, telephone, adresse) VALUES (?, ?, ?, ?)");
-$stmt->bind_param("ssss", $name, $email, $phone, $address);
-$stmt->execute();
+// Start a transaction
+$conn->begin_transaction();
 
+try {
+    // Insert data into 'clients' table
+    $stmt = $conn->prepare("INSERT INTO clients (nom, email, telephone, adresse) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $name, $email, $phone, $address);
+    $stmt->execute();
 
-// Check if the insert was successful
-if ($stmt->affected_rows > 0) {
-    echo "Data inserted successfully!";
-} else {
-    echo "Error inserting data.";
+    // Check if the insert was successful
+    if ($stmt->affected_rows > 0) {
+        // Get the client ID
+        $clientId = $stmt->insert_id;
+
+        // Insert data into 'rdv' table
+        $stmt = $conn->prepare("INSERT INTO rdv (client_id, voiture_id, date_reservation) VALUES (?, ?, ?)");
+        $stmt->bind_param("iis", $clientId, $vehicleId, $appointmentDate);
+        $stmt->execute();
+
+        // Check if the insert was successful
+        if ($stmt->affected_rows > 0) {
+            // Update 'voitures' table
+            $stmt = $conn->prepare("UPDATE voitures SET dispo = 0 WHERE id = ?");
+            $stmt->bind_param("i", $vehicleId);
+            $stmt->execute();
+
+            // Check if the update was successful
+            if ($stmt->affected_rows > 0) {
+                // Commit the transaction
+                $conn->commit();
+                echo "Data inserted successfully!";
+            } else {
+                throw new Exception("Error updating 'voitures' table.");
+            }
+        } else {
+            throw new Exception("Error inserting data into 'rdv' table.");
+        }
+    } else {
+        throw new Exception("Error inserting data into 'clients' table.");
+    }
+} catch (Exception $e) {
+    // Rollback the transaction
+    $conn->rollback();
+    echo "Transaction failed: " . $e->getMessage();
 }
 
 // Close statement and connection
