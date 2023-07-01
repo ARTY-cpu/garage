@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Form TEST</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/detect_model.js"></script>
 </head>
 <body>
     <h1>Form</h1>
@@ -22,16 +24,24 @@
         <label for="appointment-date">Appointment Date:</label>
         <input type="date" name="appointment-date" id="appointment-date" required>
         
-        <label for="vehicle-category">Vehicle Category:</label>
-        <select name="vehicle-category" id="vehicle-category" required>
-            <option value="citadine">Citadine</option>
-            <option value="suv">SUV</option>
-            <option value="ancienne">Ancienne</option>
-            <option value="luxe">Luxe</option>
-        </select>
-        
+        <form action="../php/get_model.php" method="POST">
+          <label for="vehicle-category">Vehicle Category:</label>
+          <select name="vehicle-category" id="vehicle-category" required>
+              <option value="citadine">Citadine</option>
+              <option value="suv">SUV</option>
+              <option value="ancienne">Ancienne</option>
+              <option value="luxe">Luxe</option>
+          </select>
+      
+          <label for="vehicle-model">Vehicle Model:</label>
+          <select name="vehicle-model" id="vehicle-model" required>
+              <!-- Les options pour la sélection de la marque et du modèle seront ajoutées dynamiquement ici -->
+          </select>
+
+          <input type="hidden" name="vehicle-id" id="vehicle-id">
+      
+      </form>
         <input type="submit" value="Submit">
     </form>
-    
 </body>
 </html>
