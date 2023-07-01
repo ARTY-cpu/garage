@@ -20,6 +20,7 @@ $phone = $_POST['phone'];
 $address = $_POST['address'];
 $appointmentDate = $_POST['appointment-date'];
 $vehicleCategory = $_POST['vehicle-category'];
+$vehicleId = $_POST['vehicle-id'];
 
 // Prepare and execute the insert statement
 $stmt = $conn->prepare("INSERT INTO clients (nom, email, telephone, adresse) VALUES (?, ?, ?, ?)");
