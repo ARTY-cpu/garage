@@ -52,7 +52,7 @@ try {
             if ($stmt->affected_rows > 0) {
                 // Commit the transaction
                 $conn->commit();
-                echo "Data inserted successfully!";
+                echo "Réservation complétée - Data inserted successfully!";
             } else {
                 throw new Exception("Error updating 'voitures' table.");
             }
