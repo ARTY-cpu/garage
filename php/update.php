@@ -27,4 +27,6 @@ $stmt->close();
 
 // Rediriger vers la page précédente
 header("Location: " . $_SERVER['HTTP_REFERER']);
+exit();
+ 
 ?>

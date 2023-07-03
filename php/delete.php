@@ -28,4 +28,6 @@ $connection->close();
 
 // Redirection vers la page précédente
 header("Location: " . $_SERVER['HTTP_REFERER']);
+exit();
+
 ?>

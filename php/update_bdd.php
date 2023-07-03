@@ -1,4 +1,3 @@
-<script src="../js/update_delete.js"></script>
 <?php
 // Connexion à la base de données
 $servername = "bf2229608-001.eu.clouddb.ovh.net:35609";
@@ -31,8 +30,7 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     // Output data as a table
-    echo '<script src="../js/update_delete.js"></script>
-    <table>
+    echo '<table>
             <tr>
                 <th>Nom</th>
                 <th>Adresse</th>
@@ -45,12 +43,12 @@ if ($result->num_rows > 0) {
         echo '<tr>';
         echo '<td>' . $row["nom"] . '</td>';
         echo '<td>' . $row["adresse"] . '</td>';
-        echo '<td>' . $row["date_reservation"] . '</td>';
-        echo '<td>' . $row["voiture"] . '</td>';
+        echo '<td id="date_reservation-' . $row["id"] . '">' . $row["date_reservation"] . '</td>';
+        echo '<td id="voiture-' . $row["id"] . '">' . $row["voiture"] . '</td>';
         echo '<td>
-                <button onclick="modifyRow(' . $row["id"] . ')">Modifier</button>
-                <button onclick="deleteRow(' . $row["id"] . ')">Supprimer</button>
-              </td>';
+        <button onclick="modifyRow(' . $row["id"] . ')">Modifier</button>
+        <button onclick="deleteRow(' . $row["id"] . ')">Supprimer</button>
+        </td>';
         echo '</tr>';
     }
 
@@ -62,3 +60,5 @@ if ($result->num_rows > 0) {
 $stmt->close();
 $connection->close();
 ?>
+
+<script src="../js/update_delete.js"></script>
