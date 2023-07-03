@@ -1,3 +1,4 @@
+<script src="../js/update_delete.js"></script>
 <?php
 // Connexion à la base de données
 $servername = "bf2229608-001.eu.clouddb.ovh.net:35609";
@@ -17,7 +18,7 @@ if ($connection->connect_error) {
 $email = $_POST['Filtre']; // Corrected to match the input field name
 
 // Query to retrieve data
-$sql = "SELECT rdv.id, clients.nom, clients.adresse, rdv.date_reservation, CONCAT(voitures.marque, ' ', voitures.modele) AS voiture
+$sql = "SELECT clients.id, voitures.id, rdv.id, clients.nom, clients.adresse, rdv.date_reservation, CONCAT(voitures.marque, ' ', voitures.modele) AS voiture
         FROM rdv 
         JOIN clients ON clients.id = rdv.client_id
         JOIN voitures ON voitures.id = rdv.voiture_id
@@ -30,7 +31,8 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     // Output data as a table
-    echo '<table>
+    echo '<script src="../js/update_delete.js"></script>
+    <table>
             <tr>
                 <th>Nom</th>
                 <th>Adresse</th>
