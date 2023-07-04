@@ -1,37 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Form TEST</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/detect_model.js"></script>
-    <link rel="stylesheet" href="../css/stylesheet.css">
-    <title>Prestige Motors</title>
 </head>
 <body>
-    <header>
-        <title>Prestige Motors</title>
-    </header>
-    
-    <div id="logo"><img src="../HTML/img/logo.png" alt="logo Prestige Motors"></div>
-
-    <div id="navbar">
-        <nav>
-        <!-- Ajoutez des liens vers les pages principales -->
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <!--<li><a href="page1.html">Page 1</a></li> -->
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-    
-    <h1>Bienvenue sur Prestige Motors</h1>
-    <h3> Site de réservation de véhicules en ligne !</h3>
-    <p>Présentation à faire</p>
-    <!-- Contenu de la page d'accueil -->
-    
-    <h1>Formulaire de réservation</h1>
+    <h1>Form</h1>
     
     <form id="main-form" action="../php/formulaire.php" method="POST">
         <div class="main-component">
@@ -73,16 +48,5 @@
     </form>
     
     <form id="sub-form" action="../php/get_model.php" method="POST"></form>
-
-    <h1>List Records</h1>
-    
-    <form action="../php/BDD_liste_clients.php" method="POST">
-        <input type="hidden" name="list_records" value="true">
-        <input type="submit" value="List All Records">
-    </form>
-
-    <footer>
-        <a href="apropos.html">À propos</a>
-    </footer>
 </body>
 </html>
