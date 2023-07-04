@@ -20,27 +20,25 @@ function modifyRow(id) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var vehicles = JSON.parse(xhr.responseText);
-            
+
             // Ajouter une combobox pour la modification de la voiture
             var voitureField = document.createElement('select');
             voitureField.setAttribute('name', 'voiture');
-            
+
             // Ajouter les options de véhicules disponibles
             for (var i = 0; i < vehicles.length; i++) {
                 var option = document.createElement('option');
                 option.setAttribute('value', vehicles[i].id);
-                option.innerHTML = vehicles[i].marque + ' ' + vehicles[i].modele + ' ' + vehicles[i].couleur ;
-                
-                // Définir l'option correspondant à la voiture actuelle comme sélectionnée
-                if (vehicles[i].nom === voiture) {
-                    option.setAttribute('selected', 'selected');
-                }
-                
+                option.innerHTML = vehicles[i].marque + ' ' + vehicles[i].modele + ' ' + vehicles[i].couleur;
+
                 voitureField.appendChild(option);
             }
-            
+
+            // Définir l'option correspondant à la voiture actuelle comme sélectionnée
+            voitureField.value = voiture;
+
             form.appendChild(voitureField);
-            
+
             // Ajouter un champ pour la modification de la date de réservation
             var dateField = document.createElement('input');
             dateField.setAttribute('type', 'date');
@@ -61,8 +59,10 @@ function modifyRow(id) {
 
     xhr.open('GET', '../php/get_available_vehicles.php', true);
     xhr.send();
-
 }
+
+
+
 
 function deleteRow(id) {
     // Demander une confirmation à l'utilisateur
