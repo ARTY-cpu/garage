@@ -6,6 +6,10 @@
   
 #logo {
     text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .intro {
