@@ -3,6 +3,11 @@
   margin: 0%;
   padding: 0%;
 }
-  #logo{
+  
+#logo {
     text-align: center;
+}
+
+.intro {
+  text-align: center;
 }
