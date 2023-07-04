@@ -1,10 +1,17 @@
 function modifyRow(id) {
+    // Vérifier si un formulaire de modification existe déjà
+    var existingForm = document.querySelector('.modification-form');
+    if (existingForm) {
+        existingForm.remove(); // Supprimer le formulaire existant
+    }
+
     // Récupérer les valeurs actuelles de la ligne
     var voiture = document.getElementById('voiture_id_' + id).value;
     var date_reservation = document.getElementById('date_reservation_id_' + id).value;
 
     // Créer un formulaire pour la modification
     var form = document.createElement('form');
+    form.setAttribute('class', 'modification-form'); // Ajouter une classe pour le formulaire
     form.setAttribute('method', 'post');
     form.setAttribute('action', '../php/update.php');
 
@@ -52,15 +59,23 @@ function modifyRow(id) {
             submitButton.setAttribute('value', 'Modifier');
             form.appendChild(submitButton);
 
-            // Ajouter le formulaire à la page
-            document.body.appendChild(form);
+            // Ajouter un bouton Annuler
+            var cancelButton = document.createElement('button');
+            cancelButton.setAttribute('type', 'button');
+            cancelButton.innerHTML = 'Annuler';
+            cancelButton.addEventListener('click', function() {
+                form.remove(); // Supprimer le formulaire en cas d'annulation
+            });
+            form.appendChild(cancelButton);
+
+            // Ajouter le formulaire au début du document
+            document.body.insertBefore(form, document.body.firstChild);
         }
     };
 
     xhr.open('GET', '../php/get_available_vehicles.php', true);
     xhr.send();
 }
-
 
 
 
@@ -75,7 +90,7 @@ function deleteRow(id) {
         form.setAttribute('method', 'post');
         form.setAttribute('action', '../php/delete.php');
 
-        // Ajouter un champ caché pour stocker l'identifiant
+        // Ajouter un champ caché pour stocker l'identifiant de rendez-vous
         var idField = document.createElement('input');
         idField.setAttribute('type', 'hidden');
         idField.setAttribute('name', 'id');
@@ -87,3 +102,4 @@ function deleteRow(id) {
         form.submit();
     }
 }
+

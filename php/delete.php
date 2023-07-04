@@ -14,10 +14,52 @@ if ($connection->connect_error) {
 }
 
 // Vérification des variables POST
-if (isset($_POST['rdv_id']) && isset($_POST['voiture_id'])) {
-    // Récupérer l'identifiant de la ligne à supprimer
-    $rdv_id = $_POST['rdv_id'];
-    $voiture_id = $_POST['voiture_id'];
+if (isset($_POST['id'])) {
+    // Récupérer l'identifiant de rendez-vous à supprimer
+    $rdv_id = $_POST['id'];
+
+    // Requête SELECT pour vérifier la correspondance de l'identifiant de rendez-vous
+    $select_sql = "SELECT * FROM rdv WHERE id = ?";
+    $select_stmt = $connection->prepare($select_sql);
+    $select_stmt->bind_param("i", $rdv_id);
+    $select_stmt->execute();
+    $result = $select_stmt->get_result();
+
+    if ($result->num_rows === 0) {
+        die("Aucun résultat trouvé pour l'identifiant de rendez-vous : " . $rdv_id);
+    }
+
+    $select_stmt->close();
+
+    // Affichage des valeurs pour débogage
+    echo "Rdv ID: " . $rdv_id . "<br>";
+
+    // Récupérer l'identifiant de la voiture associée au rendez-vous
+    $select_car_sql = "SELECT voiture_id FROM rdv WHERE id = ?";
+    $select_car_stmt = $connection->prepare($select_car_sql);
+    $select_car_stmt->bind_param("i", $rdv_id);
+    $select_car_stmt->execute();
+    $car_result = $select_car_stmt->get_result();
+
+    if ($car_result->num_rows === 0) {
+        die("Aucune voiture associée à l'identifiant de rendez-vous : " . $rdv_id);
+    }
+
+    $car_row = $car_result->fetch_assoc();
+    $voiture_id = $car_row['voiture_id'];
+
+    $select_car_stmt->close();
+
+    // Mettre la voiture à dispo = 1 dans la table voitures
+    $update_car_sql = "UPDATE voitures SET dispo = 1 WHERE id = ?";
+    $update_car_stmt = $connection->prepare($update_car_sql);
+    $update_car_stmt->bind_param("i", $voiture_id);
+
+    if ($update_car_stmt->execute() === false) {
+        die("Erreur lors de la mise à jour de la disponibilité de la voiture : " . $update_car_stmt->error);
+    }
+
+    $update_car_stmt->close();
 
     // Requête de suppression
     $sql_delete = "DELETE FROM rdv WHERE id = ?";
@@ -30,21 +72,12 @@ if (isset($_POST['rdv_id']) && isset($_POST['voiture_id'])) {
 
     $stmt_delete->close();
 
-    // Requête de mise à jour de la disponibilité de la voiture
-    $sql_update = "UPDATE voitures SET dispo = 1 WHERE id = ?";
-    $stmt_update = $connection->prepare($sql_update);
-    $stmt_update->bind_param("i", $voiture_id);
-
-    if ($stmt_update->execute() === false) {
-        die("Erreur lors de la mise à jour de la disponibilité de la voiture : " . $stmt_update->error);
-    }
-
-    $stmt_update->close();
+    echo "Suppression effectuée avec succès.";
 }
 
 $connection->close();
 
 // Redirection vers la page précédente
-header("Location: " . $_SERVER['HTTP_REFERER']);
+header("Location: " . $_SERVER['update_bdd.php']);
 exit();
 ?>

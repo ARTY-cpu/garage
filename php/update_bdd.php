@@ -14,7 +14,7 @@ if ($connection->connect_error) {
 }
 
 // get email client
-$email = $_POST['Filtre']; // Corrected to match the input field name
+$email = isset($_POST['Filtre']) ? $_POST['Filtre'] : ''; // Corrected to match the input field name
 
 // Query to retrieve data
 $sql = "SELECT clients.id AS client_id, voitures.id AS voiture_id, rdv.id AS rdv_id, clients.nom, clients.adresse, rdv.date_reservation, CONCAT(voitures.marque, ' ', voitures.modele) AS voiture
