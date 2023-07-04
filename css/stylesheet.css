@@ -32,3 +32,46 @@ form {
   display:block;
   flex-direction: column;
 }
+
+.footer {
+  background-color: #f4f3f3;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  height: 80px; /* Remplacez la valeur par celle que vous souhaitez */
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.presentation {
+  text-size-adjust: auto;
+}
+
+.container {
+  white-space: nowrap;
+  
+}
+
+.block {
+  display: inline-table;
+  width: 24%;
+  height: auto;
+  background-color: #cccccc;
+  margin-right: 10px;
+  
+}
+
+.title {
+  text-align: center;
+  font-size: larger;
+}

@@ -13,23 +13,26 @@
     <!-- ^^BOOTSTRAP ^^-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/detect_model.js"></script>
-    <title>Prestige Motors</title>
+    <title>Prestige Auto</title>
 </head>
 <body>
     <header>
-        <title>Prestige Motors</title>
+        <title>Prestige Auto</title>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Accueil</a>
+        <a class="navbar-brand" href="index.html">Accueil</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Accueil <span class="sr-only">(current)</span></a>
+            <!--<li class="nav-item active">
+              <a class="nav-link" href="index.html">Accueil</a>
+            </li> -->
+            <li>
+                <a class="nav-link" href="reservation.html">Réservation</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
@@ -43,62 +46,42 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
-      </nav>
+    </nav>
     
-      <div id="logo"><img src="../HTML/img/logo2.png" alt="logo Prestige Motors"></div>
+    <div id="logo"><img src="../HTML/img/logo2.png" alt="logo Prestige Motors"></div>
 
 
-    <div class="intro">
-        <div class ="title"><h1>Bienvenue sur Prestige Motors</h1></div>
-        <h3> Site de réservation de véhicules en ligne !</h3>
-        <p>Présentation à faire<br></p>
+    <div class="intro top shadow-sm p-3 mb-5 bg-white rounded">
+            <div class ="title">
+                <h1>Bienvenue sur Prestige Motors</h1>
+            </div>
+             <h3> Site de réservation de véhicules en ligne !</h3>
+        </div>
+        <div class="containe"><div class="title text-lg-center">Prestige Auto - Votre partenaire de confiance pour la location de voitures.</div><br>
+
+            <div class="block">Chez Prestige Auto, nous mettons à votre disposition une large flotte de voitures bien entretenues pour tous vos besoins de voyage. Que ce soit pour une escapade en famille, une escapade romantique ou un voyage d'affaires, nous avons la voiture parfaite pour vous.</div>
+            
+            <div class="block">Notre processus de réservation en ligne est simple et pratique, et nous offrons des options de location flexibles pour s'adapter à votre emploi du temps. Avec notre équipe professionnelle et sympathique, vous bénéficierez d'un service client de première classe à chaque étape de votre expérience de location.</div>
+            
+            <div class="block">Nous vous offrons la liberté de prendre la route et d'explorer à votre rythme. Nos voitures de qualité sont prêtes à vous accompagner lors de vos aventures, que ce soit pour découvrir des paysages magnifiques ou visiter des attractions touristiques populaires.</div>
+            
+            <div class="block">Chez Prestige Auto, nous nous engageons à vous offrir une expérience de location sans tracas, avec une attention particulière portée à votre satisfaction. Choisissez Prestige Auto pour une location de voiture fiable, une excellente qualité de service et une expérience de conduite inoubliable.
+            
+            dès maintenant et préparez-vous à vivre une aventure sans limites avec Prestige Auto.</div>
+        </div>
     </div>
 
     <!-- Contenu de la page d'accueil -->
     
-    <h1>Formulaire de réservation</h1>
-    
-    <form id="main-form" action="../php/formulaire.php" method="POST">
-        <div class="main-component">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required>
-            
-            <label for="phone">Phone:</label>
-            <input type="text" name="phone" id="phone" required>
-            
-            <label for="address">Address:</label>
-            <input type="text" name="address" id="address" required>
-            
-            <label for="appointment-date">Appointment Date:</label>
-            <input type="date" name="appointment-date" id="appointment-date" required>
-            
-            <div class="sub-component">
-                <label for="vehicle-category">Vehicle Category:</label>
-                <select name="vehicle-category" id="vehicle-category" required>
-                    <option value="citadine">Citadine</option>
-                    <option value="suv">SUV</option>
-                    <option value="ancienne">Ancienne</option>
-                    <option value="luxe">Luxe</option>
-                </select>
-    
-                <label for="vehicle-model">Vehicle Model:</label>
-                <select name="vehicle-model" id="vehicle-model" required>
-                    <!-- Les options pour la sélection de la marque et du modèle seront ajoutées dynamiquement ici -->
-                </select>
-                
-                <!-- Champ de formulaire caché pour l'ID de la voiture -->
-                <input type="hidden" name="vehicle-id" id="vehicle-id">
-            </div>
-    
-            <input type="submit" name="main-save" value="Submit">
-        </div>
-    </form>
+    <div class="reservation"> 
+        Nous sommes heureux de vous accueillir chez nous, si vous voulez réserver un véhicule c'est par ici
+    </div>
 
-    <footer>
-        <a href="apropos.html">À propos</a>
-    </footer>
+    <footer class="footer text-secondary">
+        <div class="container">
+            <a class="text-secondary" href="apropos.html">À propos</a>
+            <span class="text-muted">© 2023 Prestige Auto. Tous droits réservés.</span>
+        </div>
+      </footer>
 </body>
 </html>
