@@ -1,4 +1,8 @@
 <?php
+
+session_start();
+ob_start();
+
 // Connexion à la base de données
 $servername = "bf2229608-001.eu.clouddb.ovh.net:35609";
 $username = "Garage_Admin";
@@ -17,6 +21,9 @@ if ($connection->connect_error) {
 $id = $_POST['id'];
 $voiture = $_POST['voiture'];
 $date_reservation = $_POST['date_reservation'];
+
+// Récupérer l'email depuis l'URL
+$email = $_SESSION['email'];
 
 // Désactiver l'ancien véhicule
 $disable_sql = "UPDATE voitures SET dispo = 1 WHERE id = (
@@ -61,6 +68,6 @@ if ($rows_affected > 0 && $results !== null) {
 ob_end_clean();
 
 // Rediriger vers la page précédente
-header("Location: ../php/update_bdd.php");
+header("Location: ../php/update_bdd.php?Filtre=" . urlencode($email));
 exit();
 ?>

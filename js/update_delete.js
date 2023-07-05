@@ -8,6 +8,7 @@ function modifyRow(id) {
     // Récupérer les valeurs actuelles de la ligne
     var voiture = document.getElementById('voiture_id_' + id).value;
     var date_reservation = document.getElementById('date_reservation_id_' + id).value;
+    var email = document.getElementById('email').value;
 
     // Créer un formulaire pour la modification
     var form = document.createElement('form');
@@ -53,6 +54,15 @@ function modifyRow(id) {
             dateField.setAttribute('value', date_reservation);
             form.appendChild(dateField);
 
+            // Ajouter un champ pour la modification de l'e-mail
+            var emailField = document.createElement('input');
+            emailField.setAttribute('type', 'hidden');
+            emailField.setAttribute('name', 'email');
+            emailField.setAttribute('value', email);
+            form.appendChild(emailField);
+
+
+
             // Ajouter un bouton de soumission
             var submitButton = document.createElement('input');
             submitButton.setAttribute('type', 'submit');
@@ -73,7 +83,7 @@ function modifyRow(id) {
         }
     };
 
-    xhr.open('GET', '../php/get_available_vehicles.php', true);
+    xhr.open('GET', '../php/get_available_vehicles.php?email=' + encodeURIComponent(email), true);
     xhr.send();
 }
 
@@ -96,6 +106,13 @@ function deleteRow(id) {
         idField.setAttribute('name', 'id');
         idField.setAttribute('value', id);
         form.appendChild(idField);
+        
+        // Ajouter un champ pour la modification de l'e-mail
+        var emailField = document.createElement('input');
+        emailField.setAttribute('type', 'hidden');
+        emailField.setAttribute('name', 'email');
+        emailField.setAttribute('value', email);
+        form.appendChild(emailField);
 
         // Ajouter le formulaire à la page et le soumettre
         document.body.appendChild(form);

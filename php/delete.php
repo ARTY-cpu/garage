@@ -1,4 +1,10 @@
 <?php
+
+
+session_start();
+
+
+
 // Connexion à la base de données
 $servername = "bf2229608-001.eu.clouddb.ovh.net:35609";
 $username = "Garage_Admin";
@@ -12,6 +18,10 @@ $connection = new mysqli($servername, $username, $password, $database);
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
+
+
+// Récupérer l'email depuis l'URL
+$email = $_SESSION['email'];
 
 // Vérification des variables POST
 if (isset($_POST['id'])) {
@@ -77,7 +87,10 @@ if (isset($_POST['id'])) {
 
 $connection->close();
 
-// Redirection vers la page précédente
-header("Location: " . $_SERVER['update_bdd.php']);
+// Assurez-vous qu'aucun contenu HTML n'est envoyé avant la redirection
+ob_end_clean();
+
+// Rediriger vers la page précédente
+header("Location: ../php/update_bdd.php?Filtre=" . urlencode($email));
 exit();
 ?>
