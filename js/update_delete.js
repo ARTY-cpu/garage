@@ -119,4 +119,3 @@ function deleteRow(id) {
         form.submit();
     }
 }
-
