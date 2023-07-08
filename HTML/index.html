@@ -74,11 +74,14 @@
     
     <form id="sub-form" action="../php/get_model.php" method="POST"></form>
 
-    <h1>List Records</h1>
+    <h1>Liste de vos rdv:</h1>
     
-    <form action="../php/BDD_liste_clients.php" method="POST">
+    <form action="../php/update_bdd.php" method="GET">
+        <label for="Filtre">Filtre:</label>
+        <input type="text" name="Filtre" id="Filtre" required placeholder="Veuillez entrer votre email.">
+
         <input type="hidden" name="list_records" value="true">
-        <input type="submit" value="List All Records">
+        <input type="submit" value="Vos RDV">
     </form>
 
     <footer>
