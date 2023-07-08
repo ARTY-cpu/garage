@@ -61,12 +61,19 @@ if ($result->num_rows > 0) {
         echo '</tr>';
     }
     echo '</table>';
+    echo '<br>';
+    echo '<button onclick="goBack()">Revenir à la page précédente</button>';
+    echo '<script>function goBack() { window.history.back(); }</script>';
 } else {
     if (isset($_POST['id'])) {
         // Une modification a été effectuée
         echo "Data.";
     } else {
         echo "Aucun Rendez-Vous.";
+        echo '<br>';
+        echo '<button onclick="goBack()">Revenir à la page précédente</button>';
+        echo '<script>function goBack() { window.history.back(); }</script>';
+
     }
 }
 
