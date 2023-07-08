@@ -42,6 +42,13 @@ $update_stmt->execute();
 $rows_affected = $update_stmt->affected_rows;
 $update_stmt->close();
 
+// Mettre la disponibilité de la nouvelle voiture à 0
+$disable_new_car_sql = "UPDATE voitures SET dispo = 0 WHERE id = ?";
+$disable_new_car_stmt = $connection->prepare($disable_new_car_sql);
+$disable_new_car_stmt->bind_param("i", $voiture);
+$disable_new_car_stmt->execute();
+$disable_new_car_stmt->close();
+
 // Requête pour récupérer les données mises à jour
 $select_sql = "SELECT clients.id AS client_id, voitures.id AS voiture_id, rdv.id AS rdv_id, clients.nom, clients.adresse, rdv.date_reservation, CONCAT(voitures.marque, ' ', voitures.modele) AS voiture
         FROM rdv 
@@ -60,7 +67,7 @@ if ($rows_affected > 0 && $results !== null) {
     // ...
     echo "Data Inserted and modified.";
 } else {
-    echo "Data.";
+    echo "Data Not Inserted.";
 }
 
 

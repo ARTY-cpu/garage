@@ -62,6 +62,10 @@ try {
             // Commit the transaction
             $conn->commit();
             echo "Réservation complétée - Data inserted successfully!";
+            echo '<br>';
+            echo '<button onclick="goBack()">Revenir à la page précédente</button>';
+            echo '<script>function goBack() { window.history.back(); }</script>';
+
         } else {
             throw new Exception("Error updating 'voitures' table.");
         }
@@ -72,6 +76,9 @@ try {
     // Rollback the transaction
     $conn->rollback();
     echo "Transaction failed: " . $e->getMessage();
+    echo '<br>';
+    echo '<button onclick="goBack()">Revenir à la page précédente</button>';
+    echo '<script>function goBack() { window.history.back(); }</script>';
 }
 
 // Close connection
