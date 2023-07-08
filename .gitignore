@@ -1,1 +1,3 @@
 .vscode/settings.json
+test/script.sql
+.DS_Store

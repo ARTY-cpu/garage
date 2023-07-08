@@ -60,7 +60,7 @@ if ($rows_affected > 0 && $results !== null) {
     // ...
     echo "Data Inserted and modified.";
 } else {
-    echo "Data.";
+    echo "Data Not Inserted.";
 }
 
 
