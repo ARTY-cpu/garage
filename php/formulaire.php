@@ -26,49 +26,61 @@ $vehicleId = $_POST['vehicle-id'];
 $conn->begin_transaction();
 
 try {
-    // Insert data into 'clients' table
-    $stmt = $conn->prepare("INSERT INTO clients (nom, email, telephone, adresse) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $name, $email, $phone, $address);
-    $stmt->execute();
+    // Check if the email already exists in the 'clients' table
+    $emailExistsQuery = "SELECT id FROM clients WHERE email = '$email'";
+    $emailExistsResult = $conn->query($emailExistsQuery);
 
-    // Check if the insert was successful
-    if ($stmt->affected_rows > 0) {
-        // Get the client ID
-        $clientId = $stmt->insert_id;
-
-        // Insert data into 'rdv' table
-        $stmt = $conn->prepare("INSERT INTO rdv (client_id, voiture_id, date_reservation) VALUES (?, ?, ?)");
-        $stmt->bind_param("iis", $clientId, $vehicleId, $appointmentDate);
-        $stmt->execute();
+    if ($emailExistsResult && $emailExistsResult->num_rows > 0) {
+        // Email already exists, no need to create a new row
+        $row = $emailExistsResult->fetch_assoc();
+        $clientId = $row['id'];
+    } else {
+        // Email does not exist, insert data into 'clients' table
+        $insertClientQuery = "INSERT INTO clients (nom, email, telephone, adresse) VALUES ('$name', '$email', '$phone', '$address')";
+        $conn->query($insertClientQuery);
 
         // Check if the insert was successful
-        if ($stmt->affected_rows > 0) {
-            // Update 'voitures' table
-            $stmt = $conn->prepare("UPDATE voitures SET dispo = 0 WHERE id = ?");
-            $stmt->bind_param("i", $vehicleId);
-            $stmt->execute();
-
-            // Check if the update was successful
-            if ($stmt->affected_rows > 0) {
-                // Commit the transaction
-                $conn->commit();
-                echo "Réservation complétée - Data inserted successfully!";
-            } else {
-                throw new Exception("Error updating 'voitures' table.");
-            }
+        if ($conn->affected_rows > 0) {
+            $clientId = $conn->insert_id;
         } else {
-            throw new Exception("Error inserting data into 'rdv' table.");
+            throw new Exception("Error inserting data into 'clients' table.");
+        }
+    }
+
+    // Insert data into 'rdv' table
+    $insertRdvQuery = "INSERT INTO rdv (client_id, voiture_id, date_reservation) VALUES ('$clientId', '$vehicleId', '$appointmentDate')";
+    $conn->query($insertRdvQuery);
+
+    // Check if the insert was successful
+    if ($conn->affected_rows > 0) {
+        // Update 'voitures' table
+        $updateVoituresQuery = "UPDATE voitures SET dispo = 0 WHERE id = '$vehicleId'";
+        $conn->query($updateVoituresQuery);
+
+        // Check if the update was successful
+        if ($conn->affected_rows > 0) {
+            // Commit the transaction
+            $conn->commit();
+            echo "Réservation complétée - Data inserted successfully!";
+            echo '<br>';
+            echo '<button onclick="goBack()">Revenir à la page précédente</button>';
+            echo '<script>function goBack() { window.history.back(); }</script>';
+
+        } else {
+            throw new Exception("Error updating 'voitures' table.");
         }
     } else {
-        throw new Exception("Error inserting data into 'clients' table.");
+        throw new Exception("Error inserting data into 'rdv' table.");
     }
 } catch (Exception $e) {
     // Rollback the transaction
     $conn->rollback();
     echo "Transaction failed: " . $e->getMessage();
+    echo '<br>';
+    echo '<button onclick="goBack()">Revenir à la page précédente</button>';
+    echo '<script>function goBack() { window.history.back(); }</script>';
 }
 
-// Close statement and connection
-$stmt->close();
+// Close connection
 $conn->close();
 ?>
