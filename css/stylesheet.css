@@ -22,10 +22,15 @@
   font-size: medium;
 }
 
-form {
+.main-form {
   display: block;
-  box-shadow: 1%;
+  box-shadow: 2%;
   flex-direction: column;
+  padding: 10px;
+}
+
+.button {
+  padding: 50px;
 }
 
 #main-component{

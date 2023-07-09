@@ -12,6 +12,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <!-- ^^BOOTSTRAP ^^-->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+         <link rel="icon" type="image/x-icon" href="../HTML/img/logo.png">
         <script src="../js/detect_model.js"></script>
         <title>Prestige Motors</title>
     </head>
@@ -22,33 +23,39 @@
             
         
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Accueil</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <!--<li class="nav-item active">
-              <a class="nav-link" href="index.html">Accueil</a>
-            </li> -->
-            <li>
-                <a class="nav-link" href="reservation.html">Réservation</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="apropos.html">À propos</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
+      <a class="navbar-brand" href="index.php">Accueil</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <!--<li class="nav-item active">
+            <a class="nav-link" href="index.html">Accueil</a>
+          </li> -->
+          <li>
+              <a class="nav-link" href="reservation.php">Réservation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.php">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="apropos.php">À propos</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
     </nav>
-        
+    
+    <div id="logo"><img src="../HTML/img/logo2.png" alt="logo Prestige Motors"></div>
+    <div class="intro top shadow-sm p-3 mb-5 bg-white rounded">
+        <div class ="title"><h1>Bienvenue sur Prestige Motors</h1></div>
+        <h3> Vous êtes actuellement sur la page contact</h3>
+    </div>
+
         <footer>
 
         </footer>

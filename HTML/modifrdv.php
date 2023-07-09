@@ -13,6 +13,7 @@
     <!-- ^^BOOTSTRAP ^^-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/detect_model.js"></script>
+    <link rel="icon" type="image/x-icon" href="../HTML/img/logo.png">
     <title>Prestige Motors</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index.html">Accueil</a>
+      <a class="navbar-brand" href="index.php">Accueil</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -32,13 +33,13 @@
             <a class="nav-link" href="index.html">Accueil</a>
           </li> -->
           <li>
-              <a class="nav-link" href="reservation.html">Réservation</a>
+              <a class="nav-link" href="reservation.php">Réservation</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.php">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="apropos.html">À propos</a>
+            <a class="nav-link " href="apropos.php">À propos</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -48,59 +49,34 @@
       </div>
     </nav>
     
-      <div id="logo"><img src="../HTML/img/logo2.png" alt="logo Prestige Motors"></div>
+    <div id="logo"><img src="../HTML/img/logo2.png" alt="logo Prestige Motors"></div>
 
 
     <div class="intro top shadow-sm p-3 mb-5 bg-white rounded">
         <div class ="title"><h1>Bienvenue sur Prestige Motors</h1></div>
-        <h3> Vous êtes actuellement sur la page de réservation de véhicules</h3>
+        <h3> Vous êtes actuellement sur la page de modification de votre réservation de véhicules</h3>
     </div>
 
     <!-- Contenu de la page d'accueil -->
     
-    <h1>Formulaire de réservation</h1>
     
-    <form id="main-form" action="../php/formulaire.php" method="POST">
-        <div class="main-component">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required>
-            
-            <label for="phone">Phone:</label>
-            <input type="text" name="phone" id="phone" required>
-            
-            <label for="address">Address:</label>
-            <input type="text" name="address" id="address" required>
-            
-            <label for="appointment-date">Appointment Date:</label>
-            <input type="date" name="appointment-date" id="appointment-date" required>
-            
-            <div class="sub-component">
-                <label for="vehicle-category">Vehicle Category:</label>
-                <select name="vehicle-category" id="vehicle-category" required>
-                    <option value="citadine">Citadine</option>
-                    <option value="suv">SUV</option>
-                    <option value="ancienne">Ancienne</option>
-                    <option value="luxe">Luxe</option>
-                </select>
-    
-                <label for="vehicle-model">Vehicle Model:</label>
-                <select name="vehicle-model" id="vehicle-model" required>
-                    <!-- Les options pour la sélection de la marque et du modèle seront ajoutées dynamiquement ici -->
-                </select>
-                
-                <!-- Champ de formulaire caché pour l'ID de la voiture -->
-                <input type="hidden" name="vehicle-id" id="vehicle-id">
-            </div>
-    
-            <input type="submit" name="main-save" value="Submit">
-        </div>
+    <form class="main-form" action="../php/update_bdd.php" method="GET">
+    <h1>Liste de vos rendez-vous :</h1>
+      <div class="form-column">
+        <label for="Filtre">Filtre:</label>
+        <input type="text" name="Filtre" id="Filtre" required placeholder="Veuillez entrer votre email.">
+<br>
+        <input type="hidden" name="list_records" value="true">
+        <input class="button btn btn-primary" type="submit" value="Voir mes rendez-vous">
+    </div>
     </form>
+    
 
-    <footer>
-        <a href="apropos.html">À propos</a>
+    <footer class="footer text-secondary">
+      <div class="container">
+          <a class="text-secondary" href="apropos.html">À propos</a>
+          <span class="text-muted">© 2023 Prestige Auto. Tous droits réservés.</span>
+      </div>
     </footer>
 </body>
 </html>
