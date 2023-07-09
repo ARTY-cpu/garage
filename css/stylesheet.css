@@ -3,15 +3,37 @@
   margin: 0%;
   padding: 1px;
 }
-  
+
 #logo {
-    text-align: center;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.title{
+  color: gray;
+  font-style: normal;
+  font-size: medium;
+  text-align: center;
+  padding-top: 20px;
+  /* font-size: larger; */
+}
+footer {
+  background-color: #f4f3f3;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  height: 80px;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
 }
 
+.footer a:hover {
+  text-decoration: underline;
+}
 .intro {
   text-align: center;
 }
@@ -38,26 +60,6 @@
   flex-direction: column;
 }
 
-.footer {
-  background-color: #f4f3f3;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-footer {
-  height: 80px; /* Remplacez la valeur par celle que vous souhaitez */
-}
-
-.footer a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
 .presentation {
   text-size-adjust: auto;
 }
@@ -73,10 +75,38 @@ footer {
   height: auto;
   background-color: #cccccc;
   margin-right: 10px;
+  padding: 2%;
   
 }
 
-.title {
-  text-align: center;
-  font-size: larger;
+.form-row .block {
+
+  display: inline-table;
+  width: 24%;
+  height: auto;
+  background-color: #e6e6e6a0;
+  margin-right: 10px;
+  padding: 40px;
+  margin-bottom: 2%;
 }
+
+.text {
+  padding: 10px;
+}
+
+div {
+  display: block;
+}
+
+.btn{
+  margin-top: 1%;
+  margin-left: 5px;
+}
+
+.presentation{
+  padding: 1%;
+  display: block;
+  text-shadow: 1%;
+  color: rgb(212, 68, 70);
+}
+/* ============================================================== */

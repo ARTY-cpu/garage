@@ -59,7 +59,11 @@
 
     <!-- Contenu de la page d'accueil -->
     
-    
+    <div class="text  masthead-subheading font-weight-light mb-0">
+      Voir la liste des véhicules en  <a href="portrait.php" name="ici">image</a>
+    </div>
+
+
     <form class="main-form" action="../php/formulaire.php" method="POST">
       <h1>Formulaire de réservation</h1>
       <div class="form-row">

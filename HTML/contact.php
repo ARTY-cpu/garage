@@ -56,8 +56,29 @@
         <h3> Vous êtes actuellement sur la page contact</h3>
     </div>
 
-        <footer>
+  <div class="contact-rich">
+  <h3 class="text">Informations : </h3>
+  <div class="form-row">
+    <div class="block">
+    <div class="icon"><i class="material-icons">🏘️</i></div>
+    <div class="data">Prestige Auto<br>Adresse : ////<br>75016 Paris<br>France</div>
+  </div>
+      <hr>
+    <div class="block">
+      <div class="icon"><i class="material-icons">📨</i></div>
+      <div class="data email">
+        Envoyez-nous un e-mail :<br>
+       </div>
+       <a href="mailto:prestigeauto@gmail.com">prestigeauto@gmail.com</a>
+    </div>
+  </div>
+</div>
 
-        </footer>
+    <footer class="footer text-secondary">
+        <div class="container">
+            <a class="text-secondary" href="apropos.html">À propos</a>
+            <span class="text-muted">© 2023 Prestige Auto. Tous droits réservés.</span>
+        </div>
+      </footer>
     </body>
 </html>

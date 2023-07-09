@@ -1,33 +1,41 @@
-.portfolio-section-photos {
+* {
+  font-family: sans-serif;
+  margin: 0%;
+  padding: 0%;
+}
+.title{
+  color: rgb(7, 8, 8);
+  font-style: normal;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 20px;
+}
+.portrait-section-photos {
     background-color: white;
+    padding-bottom: 50px;
+  }
+  footer {
+    background-color: #f4f3f3;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    height: 80px;
+  }
+  .footer a {
+    color: #fff;
+    text-decoration: none;
   }
   
-  .portfolio-section-photos h2 {
-    color: #242424;
-    margin-bottom: 80px;
+  .footer a:hover {
+    text-decoration: underline;
   }
-  
-  .grid-paysages {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 300px 300px 300px;
-    gap: 15px;
-  }
-  
-  .grid-portraits {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 300px 300px;
-    gap: 15px;
-  }
-  
-  .grid-paysages img,
-  .grid-portraits img {
+  #logo {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
-  
   .lien-conteneur-photo {
     position: relative;
   }
@@ -51,16 +59,70 @@
     display: flex;
   }
   @media screen and (max-width: 996px) {
-    .grid-paysages {
-      grid-template-columns: 1fr;
-      gap: 15px;
-    }
-  
-    .grid-portraits {
-      grid-template-columns: 1fr;
-      gap: 15px;
+    .text2 {
+      font-size: 2vw;
     }
   }
   #logo{
     text-align: center;
+}
+/* ====================================================== */
+#image-container{
+  position:relative;
+  margin: 20px;
+}
+.text{
+  position: absolute;
+  left: 750px;
+  height: 400px;
+  width: 40%;
+}
+.text h2{
+  margin: 40px;
+}
+.listee li{
+  margin-bottom: 20px
+}
+#displayed-image{
+  width: 50%;
+  height: 400px;
+}
+.div1{
+  margin: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+.pdiv1{
+  font-family: BrownBold,sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+  margin: 10px 0 8px;
+}
+.pint{
+  color: #5f7081;
+  font-family: BrownRegular,sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  text-transform: capitalize;
+}
+header{
+  background-image: url('../img/par4.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+.commende{
+  display: inline-block;
+  background: linear-gradient(#8e86b5, #acaeed);
+  color: white;
+  border-radius: 50px;
+  padding: 8px 17px;
+  margin-top: 10px;
+  height: 40px;
+}
+body{
+  background-color: rgb(209, 212, 125);
 }
