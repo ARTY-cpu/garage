@@ -56,8 +56,31 @@
         <h3> Vous êtes actuellement sur la page à propos</h3>
     </div>
 
-        <footer>
+    <div class="contact-rich">
+  <h3 class="text">Récapitulatif : </h3>
 
-        </footer>
+  <div class="presentation">
+  <strong>Ahmadou Diaw</strong> : J'ai réalisé la page portrait.html et portrait.css. Ces deux fichiers constituant une partie importante de notre site web. La page portrait.html est conçue pour présenter certaines voitures à nos clients. Elle offre une mise en page attrayante et conviviale pour faciliter la navigation et la visualisation des véhicules disponibles.
+
+Dans cette page, nos clients peuvent parcourir les différentes voitures en utilisant les fonctionnalités de navigation mises en place. Ils peuvent voir les détails tels que les caractéristiques, les performances, les prix et les images des voitures. L'objectif est de fournir une expérience agréable et informative, afin d'aider nos clients à faire un choix éclairé.
+
+Une fois qu'un client a trouvé une voiture qui lui plaît, nous voulons lui offrir la possibilité de passer rapidement à l'étape suivante. Pour cela, j'ai ajouté un bouton intitulé "Profiter de l'offre" sur chaque page de voiture. Lorsque le client appuie sur ce bouton, il est redirigé vers la page de réservation appropriée.
+
+ La page de réservation permet aux clients de passer leur commande de manière simple et efficace. Elle comprend un formulaire où ils peuvent saisir leurs informations personnelles, choisir les options supplémentaires requises et finaliser leur commande. L'objectif est de rendre le processus de réservation fluide et sans accroc.
+
+  </div>
+<div class="presentation">
+<strong>Arthur Magnette</strong> : Création des tables et enregistrement des données dans la database [Mysql]. Développement du backend [PHP]. Création du référentiel git pour le projet. Rédaction des spécifications du projet.
+</div>
+<div class="presentation">
+ <strong>Florentin Binet </strong> : Création du front-end, mise en forme des formulaires avec CSS / BOOTSTRAP. Je n'ai pas touché au back-end (php) encore en apprentissage.
+</div>
+
+    <footer class="footer text-secondary">
+        <div class="container">
+            <a class="text-secondary" href="apropos.html">À propos</a>
+            <span class="text-muted">© 2023 Prestige Auto. Tous droits réservés.</span>
+        </div>
+      </footer>
     </body>
 </html>

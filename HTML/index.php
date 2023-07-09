@@ -51,31 +51,36 @@
     
     <div id="logo"><img src="../HTML/img/logo2.png" alt="logo Prestige Motors"></div>
 
-
+      
     <div class="intro top shadow-sm p-3 mb-5 bg-white rounded">
             <div class ="title">
                 <h1>Bienvenue sur Prestige Motors</h1>
             </div>
              <h3> Site de réservation de véhicules en ligne !</h3>
-        </div>
-        <div class="containe"><div class="title text-lg-center">Prestige Auto - Votre partenaire de confiance pour la location de voitures.</div><br>
+    </div>
 
-            <div class="block">Chez Prestige Auto, nous mettons à votre disposition une large flotte de voitures bien entretenues pour tous vos besoins de voyage. Que ce soit pour une escapade en famille, une escapade romantique ou un voyage d'affaires, nous avons la voiture parfaite pour vous.</div>
-            
-            <div class="block">Notre processus de réservation en ligne est simple et pratique, et nous offrons des options de location flexibles pour s'adapter à votre emploi du temps. Avec notre équipe professionnelle et sympathique, vous bénéficierez d'un service client de première classe à chaque étape de votre expérience de location.</div>
-            
-            <div class="block">Nous vous offrons la liberté de prendre la route et d'explorer à votre rythme. Nos voitures de qualité sont prêtes à vous accompagner lors de vos aventures, que ce soit pour découvrir des paysages magnifiques ou visiter des attractions touristiques populaires.</div>
-            
-            <div class="block">Chez Prestige Auto, nous nous engageons à vous offrir une expérience de location sans tracas, avec une attention particulière portée à votre satisfaction. Choisissez Prestige Auto pour une location de voiture fiable, une excellente qualité de service et une expérience de conduite inoubliable.
-            
-            dès maintenant et préparez-vous à vivre une aventure sans limites avec Prestige Auto.</div>
-        </div>
+    <div class="text"> Pour voir la liste de nos véhicules c'est par 
+      <a href="portrait.php" name="ici">ici</a>
+    </div>
+    
+    <div class="containe"><div class="title text-lg-center">Prestige Auto - Votre partenaire de confiance pour la location de voitures.</div><br>
+
+        <div class="block">Chez Prestige Auto, nous mettons à votre disposition une large flotte de voitures bien entretenues pour tous vos besoins de voyage. Que ce soit pour une escapade en famille, une escapade romantique ou un voyage d'affaires, nous avons la voiture parfaite pour vous.</div>
+        
+        <div class="block">Notre processus de réservation en ligne est simple et pratique, et nous offrons des options de location flexibles pour s'adapter à votre emploi du temps. Avec notre équipe professionnelle et sympathique, vous bénéficierez d'un service client de première classe à chaque étape de votre expérience de location.</div>
+        
+        <div class="block">Nous vous offrons la liberté de prendre la route et d'explorer à votre rythme. Nos voitures de qualité sont prêtes à vous accompagner lors de vos aventures, que ce soit pour découvrir des paysages magnifiques ou visiter des attractions touristiques populaires.</div>
+        
+        <div class="block">Chez Prestige Auto, nous nous engageons à vous offrir une expérience de location sans tracas, avec une attention particulière portée à votre satisfaction. Choisissez Prestige Auto pour une location de voiture fiable, une excellente qualité de service et une expérience de conduite inoubliable.
+        
+        dès maintenant et préparez-vous à vivre une aventure sans limites avec Prestige Auto.</div>
+    </div>
     </div>
 
     <!-- Contenu de la page d'accueil -->
     
-    <div class="reservation"> 
-        Nous sommes heureux de vous accueillir chez nous, si vous voulez réserver un véhicule c'est par <a href="reservation.php" name="ici">ici
+    <div class="text"> Nous sommes heureux de vous accueillir chez nous, si vous voulez réserver un véhicule c'est par 
+      <a href="reservation.php" name="ici">ici</a>
     </div>
 
     <footer class="footer text-secondary">
