@@ -70,7 +70,7 @@ Une fois qu'un client a trouvé une voiture qui lui plaît, nous voulons lui off
 
   </div>
 <div class="presentation">
-<strong>Arthur Magnette</strong> : Création des tables et enregistrement des données dans la database. Développement du backend.
+<strong>Arthur Magnette</strong> : Création des tables et enregistrement des données dans la database [Mysql]. Développement du backend [PHP]. Création du référentiel git pour le projet. Rédaction des spécifications du projet.
 </div>
 <div class="presentation">
  <strong>Florentin Binet </strong> : Création du front-end, mise en forme des formulaires avec CSS / BOOTSTRAP. Je n'ai pas touché au back-end (php) encore en apprentissage.

@@ -46,7 +46,7 @@
       </div>
     </nav>
 
-    <div id="logo"><img src="../img/logo.png" alt="logo Prestige Motors"></div>
+    <div id="logo"><img src="../html/img/logo2.png" alt="logo Prestige Motors"></div>
     </header>
     <main>
 
@@ -65,7 +65,7 @@
            </div>
         </div>
         <div>
-            <img id="displayed-image" src="../img/par6.jpeg" alt="les locaux de Prestige Auto">
+            <img id="displayed-image" src="../html/img/par6.jpeg" alt="les locaux de Prestige Auto">
         </div>
     </div>
     <div>

@@ -68,20 +68,26 @@
 }
 /* ====================================================== */
 #image-container{
-  position:relative;
+  margin-left: 50%;
   margin: 20px;
 }
-.text{
+.text {
   position: absolute;
-  left: 750px;
+  right: 50px; /* Adjust the value as per your preference */
+  top: 50%;
+  transform: translateY(-50%);
   height: 400px;
   width: 40%;
 }
+.text2 {
+  margin: 40px;
+}
+
 .text h2{
   margin: 40px;
 }
-.listee li{
-  margin-bottom: 20px
+.listee li {
+  margin-bottom: 20px;
 }
 #displayed-image{
   width: 50%;
@@ -109,7 +115,7 @@
   text-transform: capitalize;
 }
 header{
-  background-image: url('../img/par4.jpeg');
+  background-image: url('../html/img/par4.jpeg');
   background-size: cover;
   background-position: center;
   height: 200px;
